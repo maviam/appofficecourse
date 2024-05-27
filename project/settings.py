@@ -104,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-pt'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Lisbon'
 
 USE_I18N = True
 
@@ -118,6 +118,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ BASE_DIR / 'base_static' ]
+STATIC_ROOT = BASE_DIR / 'static' # Local onde irá ficar os nossos ficheiros estáticos quando em modo de produção
+MEDIA_URL = "media/" # Ficheiros enviados pelo utilizador
+MEDIA_ROOT = BASE_DIR / 'media' # Ideia identica a do STATIC_ROOT mas para os ficheiros enviados pelo utilizador
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
