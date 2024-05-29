@@ -8,3 +8,6 @@ class TrainingUnit(models.Model):
     period = models.SmallIntegerField()
     active = models.BooleanField(default=True)
     picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m/')
+    
+    def __str__(self):
+        return f'{self.code} - { self.subject}'
