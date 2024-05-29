@@ -15,14 +15,23 @@ class TrainingUnit(models.Model):
         return f'{self.code} - { self.subject}'
 
 class Class(models.Model):
+    class Meta:
+        verbose_name = 'Class'
+        verbose_name_plural = 'Classes'
+    
     acronym = models.CharField(max_length=2)
 
+    def __str__(self):
+        return f'{self.acronym}'
 
-class Student(models.Model):
+class Student(models.Model):    
     name = models.CharField(max_length=100)
     birthday = models.DateField()
     sex = models.CharField(max_length=6, choices=[('F','Female'),('M','Male')])
     _class = models.ForeignKey(Class, on_delete=models.SET_NULL, null=True)
+    
+    def __str__(self):
+        return f'{self.name}'
     
 class Grade(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
