@@ -9,7 +9,6 @@ class TrainingUnit(models.Model):
     hours = models.SmallIntegerField()
     period = models.SmallIntegerField()
     active = models.BooleanField(default=True)
-    picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m/')
     
     def __str__(self):
         return f'{self.code} - { self.subject}'
@@ -20,6 +19,8 @@ class Class(models.Model):
         verbose_name_plural = 'Classes'
     
     acronym = models.CharField(max_length=2)
+    name = models.CharField(max_length=75, blank=True)
+    picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m/')
 
     def __str__(self):
         return f'{self.acronym}'

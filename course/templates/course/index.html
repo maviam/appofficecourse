@@ -1,5 +1,12 @@
 {% extends "global/base.html" %}
 
 {% block content %}
-    <h1>Esta é a página inicial do nosso site.</h1>
+    <section class="content-class">
+        {% for c in classes %}
+            <div class="block-class">
+                <div class="block-class-img rd"></div>
+                <div class="block-class-infor">{{ c.acronym }} - {{ c.name }}</div>
+            </div>
+        {% endfor %}
+    </section>
 {% endblock content %}
