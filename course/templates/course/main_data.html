@@ -1,0 +1,22 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <main class="data_class">
+        <section class="data_students">
+            <span class="title">Students List</span>
+            <ul class="list">
+                {% for student in students %}
+                    <li><a href="#">{{ student.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="data_units">
+            <span class="title">Training Units List</span>
+            <ul class="list">
+                {% for unit in units %}
+                    <li><a href="#">{{ unit.code }} - {{ unit.subject }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+{% endblock content %}

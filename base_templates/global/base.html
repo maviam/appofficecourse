@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{% static "global/css/style.css" %}">
 </head>
 <body>
+    {% if header %}
+        {% include "global/partials/header.html" %}
+    {% endif %}
+
     {% block content %}
         Aqui vai ser colocado o conteúdo de cada página
     {% endblock content %}
