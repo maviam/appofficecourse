@@ -35,14 +35,14 @@ header { width: 100%; height: 2.5rem; background-color: black; }
 .block-class-img { width: 100%; height: 42vh; }
 .block-class-infor { width: 100%; height: 8vh; line-height: 8vh; text-align: center; font-size: 2.25rem; }
 
-.data_class { 
-    width: 90vw; height: 75vh; display: grid; grid-template-areas: 'st tu';  
-    background-color: rgba(255,255,255,.75); padding: 1.5rem; border-radius: 1.25rem;
-    margin: 2.5rem auto; 
+.data {
+    width: 60vw; height: 60vh; background-color: rgba(255,255,255,.75); 
+    padding: 1.5rem; border-radius: 1.25rem; margin: 2.5rem auto;
 }
+.data_class { display: grid; grid-template-areas: 'st tu'; }
 .data_students { grid-area: st; border-right: 1px dotted rgba(0,0,0,.75); }
 .data_units { grid-area: tu; padding-left: 3.5rem; }
-.data_students .title, .data_units .title { 
+.title { 
     width: 90%; height: 3.25rem; line-height: 3.25rem; font-size: 2rem; color: white; 
     background-color: rgba(0,0,0,.75); padding-left: 1.25rem; border-radius: 1rem; 
     font-family: "Bebas Neue", sans-serif; letter-spacing: 0.1rem; display: block;
@@ -53,3 +53,9 @@ header { width: 100%; height: 2.5rem; background-color: black; }
 .data_students ul li a, .data_units ul li a { color: rgba(0,0,0,.5); text-decoration: none; }
 .data_students ul li:hover, .data_units ul li:hover { background-color: rgba(0,0,0,.75); border-radius: 0.25rem; }
 .data_students ul li:hover a, .data_units ul li:hover a { color: white; }
+
+.data form { margin-top: 5rem; }
+.data form .form-group { width: 90%; margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.25rem; font-weight: 700; }
+.form-group input, .form-group select { width: 75%; height: 1.75rem; }
+.form-group input[type=submit] { height: 2.75rem; font-weight: 700; background-color: black; color: white; }

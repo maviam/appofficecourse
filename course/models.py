@@ -28,7 +28,23 @@ class Class(models.Model):
 class Student(models.Model):    
     name = models.CharField(max_length=100)
     birthday = models.DateField()
-    sex = models.CharField(max_length=6, choices=[('F','Female'),('M','Male')])
+    sex = models.CharField(
+                    max_length=6, 
+                    choices=[
+                                ('F','Female'),
+                                ('M','Male')
+                            ]
+                    )
+    city = models.CharField(
+                    max_length=20, 
+                    choices=[
+                                ('FML','Famalicão'),
+                                ('FRM','Freamnunde'),
+                                ('PFR','Paços de Ferreira'),
+                                ('STR','Santo Tirso')
+                            ]
+                    )
+    dropout = models.BooleanField(default=False)
     _class = models.ForeignKey(Class, on_delete=models.SET_NULL, null=True)
     
     def __str__(self):

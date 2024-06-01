@@ -5,5 +5,6 @@ app_name = 'course'
 
 urlpatterns = [
     path('', views.index, name='class_index'),
-    path('course/maindata/', views.main_data, name='main_data') # type: ignore
+    path('course/maindata/', views.main_data, name='main_data'), # type: ignore
+    path('course/student/', views.create_student, name='new_student')
 ]
