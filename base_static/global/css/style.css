@@ -43,7 +43,7 @@ header { width: 100%; height: 2.5rem; background-color: black; }
 .data_students { grid-area: st; border-right: 1px dotted rgba(0,0,0,.75); }
 .data_units { grid-area: tu; padding-left: 3.5rem; }
 .title { 
-    width: 90%; height: 3.25rem; line-height: 3.25rem; font-size: 2rem; color: white; 
+    width: 95%; height: 3.25rem; line-height: 3.25rem; font-size: 2rem; color: white; 
     background-color: rgba(0,0,0,.75); padding-left: 1.25rem; border-radius: 1rem; 
     font-family: "Bebas Neue", sans-serif; letter-spacing: 0.1rem; display: block;
 }
@@ -55,7 +55,35 @@ header { width: 100%; height: 2.5rem; background-color: black; }
 .data_students ul li:hover a, .data_units ul li:hover a { color: white; }
 
 .data form { margin-top: 5rem; }
-.data form .form-group { width: 90%; margin-bottom: 1.5rem; }
-.form-group label { display: block; margin-bottom: 0.25rem; font-weight: 700; }
-.form-group input, .form-group select { width: 75%; height: 1.75rem; }
-.form-group input[type=submit] { height: 2.75rem; font-weight: 700; background-color: black; color: white; }
+.data form .col-1 { width: 95%; }
+.data form .col-2 { width: 47.5%; display: inline-block; }
+.data form label { font-weight: 700; }
+.data form input, .data form select { 
+    width: 100%; height: 1.75rem; 
+    margin-top: 0.50rem; margin-bottom: 1.25rem; 
+    padding-left: 0.50rem; font-size: 0.85rem;
+}
+.data form input[type=checkbox] { width: auto; height: auto; }
+.data form input[type=submit] { 
+    width: 95%; 
+    background-color: rgba(0,0,0,.75); 
+    color: white; 
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.center { text-align: center; }
+.students-table { width: 90vw; padding: 0 1.5rem; border-collapse: collapse; }
+.caption-table { 
+    font-family: 'Bebas Neue', sans-serif; font-size: 2.75rem; font-weight: 700;
+    letter-spacing: 0.2rem; padding-bottom: 1rem; text-align: center;
+}
+.table-row-header { height: 2.35rem; line-height: 2.35rem; background-color: rgba(0,0,0,.75); color: white; text-align: center; }
+.table-cel { background-color: rgba(255,255,255,.75); padding: 0.30rem 0; }
+th, td { width: 10vw; }
+.major { width: 15vw; }
+.table-cel button {
+    width: 5vw; background-color: rgba(0,0,0,.75); color: wheat; padding: 0.50rem 0; 
+}
+

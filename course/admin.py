@@ -15,7 +15,7 @@ class ClassAdmin(admin.ModelAdmin):
 
 @admin.register(models.Student)
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('id','name','birthday','_class',)
+    list_display = ('id','name','birthday','my_class',)
     ordering = ('name',)
     search_fields = ('name',)
 

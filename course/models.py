@@ -37,15 +37,16 @@ class Student(models.Model):
                     )
     city = models.CharField(
                     max_length=20, 
+                    blank=True,
                     choices=[
                                 ('FML','Famalicão'),
-                                ('FRM','Freamnunde'),
+                                ('FRM','Freamunde'),
                                 ('PFR','Paços de Ferreira'),
                                 ('STR','Santo Tirso')
                             ]
                     )
     dropout = models.BooleanField(default=False)
-    _class = models.ForeignKey(Class, on_delete=models.SET_NULL, null=True)
+    my_class = models.ForeignKey(Class, on_delete=models.SET_NULL, null=True)
     
     def __str__(self):
         return f'{self.name}'
