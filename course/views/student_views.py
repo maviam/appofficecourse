@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from course.models import Student
 from django import forms
+from django.core.paginator import Paginator
 
 class StudentForm(forms.ModelForm):
     class Meta:
@@ -23,9 +24,13 @@ def create_student(request):
 
 def list_of_students(request):
     students = Student.objects.all()
+    paginator = Paginator(students, 10)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     context = {
         'page_title': 'List of students',
-        'students': students,
+        'page_obj': page_obj,
         'header': True
     }
     return render(

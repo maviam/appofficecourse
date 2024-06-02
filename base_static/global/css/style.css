@@ -86,4 +86,21 @@ th, td { width: 10vw; }
 .table-cel button {
     width: 5vw; background-color: rgba(0,0,0,.75); color: wheat; padding: 0.50rem 0; 
 }
+.page-bar { height: 2rem; line-height: 2rem; }
+
+.pagination { background-color: rgba(0,0,0,.75); }
+.pagination .step-links {
+    display: flex;
+    gap: 1.2rem;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination .step-links a {
+    color: wheat;
+    transition: color 300ms ease-in-out;
+    text-decoration: none;
+    display: block;
+}
 

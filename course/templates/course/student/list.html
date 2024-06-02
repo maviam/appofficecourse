@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for student in students %}
+                {% for student in page_obj %}
                 <tr class="table-row">
                     <td class="table-cel center">{{ student.id }}</td>
                     <td class="table-cel major">{{ student.name }}</td>
@@ -37,7 +37,13 @@
                     </td>
                 </tr>
                 {% endfor %}
+                <tr class="table-row">
+                    <th class="table-header page-bar" colspan="7">
+                        {% include "global/partials/pagination.html" %}
+                    </th>
+                </tr>
             </tbody>
         </table>
+        
     </section>
 {% endblock content %}
