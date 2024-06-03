@@ -31,9 +31,8 @@
                         {% endif %}
                     </td>
                     <td class="table-cel center">
-                        <form action="" method="get">
-                            <button>Edit</button><button>Delete</button>
-                        </form>
+                        <a href="{% url "course:see_student" student.id %}">Edit</a>
+                        <a href="#">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}

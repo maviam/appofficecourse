@@ -1,0 +1,23 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <main class="data">
+        <span class="title">STUDENT INFORMATION</span>
+        <div class="student-information">
+            <p><b>Id:</b> {{ student.id }}</p>
+            <p><b>Name:</b> {{ student.name }}</p>
+            <p><b>Birthday:</b> {{ student.birthday }}</p>
+            <p><b>Sex:</b> {{ student.get_sex_display }}</p>
+            <p><b>City:</b> {{ student.get_city_display }}</p>
+            <p><b>Class:</b> {{ student.my_class }}</p>
+            <p>
+                <b>Dropout:</b> 
+                {% if student.dropout %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </p>
+        </div>
+    </main>
+{% endblock content %}
