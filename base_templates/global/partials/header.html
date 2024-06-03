@@ -1,8 +1,12 @@
+{% load static %}
 <header>
-    <img src="" alt="">
-    <nav>
+    <img src="{% static "global/images/logo.png" %}" alt="">
+    <nav class="menu">
         <ul>
-            <li><a href="{% url "course:new_student" %}">New student</a></li>
+            <li><a href="{% url "course:class_index" %}">Classes</a></li>
+            <li><a href="{% url "course:students_list" %}">Students</a></li>
+            <li><a href="#">Training Units</a></li>
+            <li><a href="#">Grades</a></li>
         </ul>
     </nav>
 </header>

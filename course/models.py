@@ -56,3 +56,4 @@ class Grade(models.Model):
     training_unit = models.ForeignKey(TrainingUnit, on_delete=models.SET_NULL, null=True)
     grade = models.FloatField()
     released_date = models.DateTimeField(default=timezone.now)
+    
