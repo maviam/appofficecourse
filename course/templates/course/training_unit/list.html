@@ -3,35 +3,33 @@
 {% block content %}
     <section class="content-student">
         <table class="students-table">
-            <caption class="caption-table">List of Students</caption>
+            <caption class="caption-table">List of Training Units</caption>
             <thead>
                 <tr class="table-row table-row-header">
-                    <th class="table-header">Id</th>
-                    <th class="table-header major">Name</th>
-                    <th class="table-header major">Birthday</th>
-                    <th class="table-header">City</th>
-                    <th class="table-header">Class</th>
-                    <th class="table-header">Dropout?</th>
+                    <th class="table-header">Code</th>
+                    <th class="table-header major">Subject</th>
+                    <th class="table-header">Hours</th>
+                    <th class="table-header">Period</th>
+                    <th class="table-header">Active?</th>
                     <th class="table-header">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                {% for student in page_obj %}
+                {% for unit in page_obj %}
                 <tr class="table-row">
-                    <td class="table-cel center">{{ student.id }}</td>
-                    <td class="table-cel major">{{ student.name }}</td>
-                    <td class="table-cel major center">{{ student.birthday }}</td>
-                    <td class="table-cel center">{{ student.get_city_display }}</td>
-                    <td class="table-cel center">{{ student.my_class }}</td>
+                    <td class="table-cel center">{{ unit.code }}</td>
+                    <td class="table-cel major">{{ unit.subject }}</td>
+                    <td class="table-cel center">{{ unit.hours }} hours</td>
+                    <td class="table-cel center">{{ unit.period }}</td>
                     <td class="table-cel center">
-                        {% if student.dropout %}
+                        {% if unit.active %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
                     </td>
                     <td class="table-cel center">
-                        <a href="{% url "course:see_student" student.id %}">Edit</a>
+                        <a href="#">Edit</a>
                         <a href="#">Delete</a>
                     </td>
                 </tr>
@@ -43,7 +41,7 @@
                 </tr>
                 <tr class="table-row last">
                     <td colspan="7" class="right">
-                        <a href="{% url "course:new_student" %}" class="insert">Add new student</a>
+                        <a href="#" class="insert">Add new training unit</a>
                     </td>
                 </tr>
             </tbody>
