@@ -20,7 +20,7 @@
                 <tr class="table-row">
                     <td class="table-cel center">{{ student.id }}</td>
                     <td class="table-cel major">{{ student.name }}</td>
-                    <td class="table-cel major center">{{ student.birthday }}</td>
+                    <td class="table-cel major center">{{ student.birthday|date:'d-m-Y' }}</td>
                     <td class="table-cel center">{{ student.get_city_display }}</td>
                     <td class="table-cel center">{{ student.my_class }}</td>
                     <td class="table-cel center">

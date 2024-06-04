@@ -1,15 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from course.models import Student
-from django import forms
+from forms import StudentForm
 from django.core.paginator import Paginator
 
-class StudentForm(forms.ModelForm):
-    class Meta:
-        model = Student
-        fields = ('name','birthday','sex','city','my_class','dropout')
+
 
 # Create your views here.
 def create_student(request):
+    if request.method == 'POST':
+        form = StudentForm(data=request.POST)
+        context = {
+            'page_title': 'Add new student',
+            'form': form,
+            'header': True
+        }
+        
+        if form.is_valid():
+            form.save()
+            return redirect('course:students_list')
+
+        return render(
+            request,
+            'course/student/create.html',
+            context
+        )
     
     context = {
         'page_title': 'Add new student',
