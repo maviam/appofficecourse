@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 class TrainingUnit(models.Model):
     code = models.CharField(max_length=5, primary_key=True)
