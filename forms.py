@@ -1,6 +1,7 @@
 from course.models import Student
 from django import forms
 from project import settings
+from django.core.exceptions import ValidationError
 
 class StudentForm(forms.ModelForm):
     class Meta:
@@ -15,3 +16,13 @@ class StudentForm(forms.ModelForm):
                 }
             )
         }
+
+    # def clean(self):
+    #     self.add_error(
+    #         'name',
+    #         ValidationError(
+    #             'Existe algum erro neste campo',
+    #             code = 'invalid'
+    #         )
+    #     )
+    #     return super().clean()

@@ -106,6 +106,10 @@ header .menu ul li a:hover { color: wheat; }
     font-size: 1rem;
     font-weight: 600;
 }
+.errorlist li { 
+    margin-top: -1rem; margin-bottom: 1rem; padding-left: 0.10rem;
+    list-style-type: none; color: red; font-size: 0.75rem; 
+}
 
 /* ====================================================== STUDENTS LIST ================================================== */
 

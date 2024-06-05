@@ -2,7 +2,7 @@
 
 {% block content %}
     <main class="data">
-        <span class="title">ADD NEW STUDENT</span>
+        <span class="title">{{ title }}</span>
         <form action="" method="post">
             {% csrf_token %}
             {% for field in form %}
