@@ -15,11 +15,13 @@ def index(request):
         context
     )
 
-def main_data(request):
-    students = Student.objects.all()
+def main_data(request,class_id):
+    my_class = Class.objects.get(pk=class_id)
+    students = Student.objects.filter(my_class=class_id)
     training_units = TrainingUnit.objects.all()
     context = {
         'page_title': 'Class Students and Training Units',
+        'myclass': my_class,
         'students': students,
         'units': training_units,
         'header': True

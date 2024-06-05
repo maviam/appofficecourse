@@ -1,12 +1,13 @@
 {% extends "global/base.html" %}
 
 {% block content %}
+    <section class="course">{{ myclass.acronym }} - {{ myclass.name }}</section>
     <main class="data data_class">
         <section class="data_students">
             <span class="title">Students List</span>
             <ul class="list">
                 {% for student in students %}
-                    <li><a href="#">{{ student.name }}</a></li>
+                    <li><a href="{% url 'course:see_student' student.id %}">{{ student.name }}</a></li>
                 {% endfor %}
             </ul>
         </section>

@@ -10,10 +10,12 @@
                     <div class="col-1">
                         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                         {{ field }}
+                        {{ field.errors }}
                     </div>
                 {% elif field.label == 'Dropout' %}
                     <div class="col-1">
                         {{ field }}
+                        {{ field.errors }}
                         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                         
                     </div>
@@ -21,6 +23,7 @@
                     <div class="col-2 caption">
                         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                         {{ field }}
+                        {{ field.errors }}
                     </div>
                 {% endif %}
             {% endfor %}
