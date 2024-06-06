@@ -47,7 +47,8 @@ def create_student(request, student_id = None):
                 'form': form,
                 'header': True,
                 'student': student,
-                'title': title
+                'title': title,
+                'button': 'Update student data'
             }
             
             if form.is_valid():
@@ -66,7 +67,8 @@ def create_student(request, student_id = None):
             'form': StudentForm(instance=student),
             'header': True,
             'student': student,
-            'title': title
+            'title': title,
+            'button': 'Update student data'
         }
         return render(
             request,
@@ -81,7 +83,8 @@ def create_student(request, student_id = None):
                 'page_title': 'Add new student',
                 'form': form,
                 'header': True,
-                'title': title
+                'title': title,
+                'button': 'Add student'
             }
             
             if form.is_valid():
@@ -98,7 +101,8 @@ def create_student(request, student_id = None):
             'page_title': 'Add new student',
             'form': StudentForm(),
             'header': True,
-            'title': title
+            'title': title,
+            'button': 'Add student'
         }
         return render(
             request,

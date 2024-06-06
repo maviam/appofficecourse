@@ -40,4 +40,8 @@
         </div>
         {% endif %}
     </main>
+    <div class="buttons">
+        <a href="{% url 'course:edit_student' student.id %}">Edit student</a>
+        <a href="" class="delete">Delete student</a>
+    </div>
 {% endblock content %}

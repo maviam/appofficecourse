@@ -4,7 +4,11 @@
     <section class="content-class">
         {% for c in classes %}
             <div class="block-class">
-                <div class="block-class-img rd"></div>
+                <div class="block-class-img">
+                    {% if c.picture %}
+                        <img src="{{ c.picture.url }}" alt="{{ c.name}} ({{ c.acronym }})" class="block-class-img">
+                    {% endif %}
+                </div>
                 <div class="block-class-infor">
                     <a href="{% url 'course:main_data' c.id %}">
                         {{ c.acronym }} - {{ c.name }}
