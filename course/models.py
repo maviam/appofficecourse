@@ -11,7 +11,7 @@ class TrainingUnit(models.Model):
     active = models.BooleanField(default=True)
     
     def __str__(self):
-        return f'{self.code} - { self.subject}'
+        return f'{self.code}- { self.subject}'
 
 class Class(models.Model):
     class Meta:
@@ -57,3 +57,5 @@ class Grade(models.Model):
     grade = models.FloatField()
     released_date = models.DateTimeField(default=timezone.now)
     
+    def __str__(self):
+        return f'{self.student} - {self.training_unit} ({self.grade})'

@@ -19,5 +19,25 @@
                 {% endif %}
             </p>
         </div>
+        {% if grades %} 
+        <div class="student-information">
+            <table class="student-grades-table">
+                <thead>
+                    <tr class="student-grades-table-header sgt">
+                        <th class="sgt-left">Training Unit</th>
+                        <th class="sgt-right">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for grade in grades %}
+                        <tr class="sgt">
+                            <td class="sgt-left">{{ grade.training_unit}}</td>
+                            <td class="sgt-right">{{ grade.grade }} values</thead>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
     </main>
 {% endblock content %}

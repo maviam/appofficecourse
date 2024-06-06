@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from course.models import Student
+from course.models import Student, Grade
 from forms import StudentForm
 from django.core.paginator import Paginator
 
@@ -23,9 +23,11 @@ def list_of_students(request):
 
 def student_information(request, student_id):
     student = Student.objects.get(pk=student_id)
+    grades = Grade.objects.filter(student=student_id).order_by('grade')
     context = {
         'page_title': 'List of students',
         'student': student,
+        'grades': grades,
         'header': True
     }
     return render(
