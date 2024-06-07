@@ -3,7 +3,7 @@ from course.models import Class, TrainingUnit, Student
 
 # Create your views here.
 def index(request):
-    classes = Class.objects.all()
+    classes = Class.objects.all().filter(closed=False)
     context = {
         'page_title': 'Office Course',
         'classes': classes,

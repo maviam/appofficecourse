@@ -48,13 +48,17 @@ header .menu ul li a:hover { color: wheat; }
 
 /* ====================================================== HOME ================================================== */
 
-.content-class { width: 100%; height: 100vh; display: flex; justify-content: space-around; align-items: center; }
-.block-class { width: 25%; height: 50vh; border: 1px solid black; }
-.block-class-img { width: 100%; height: 42vh; }
-.block-class-infor { width: 100%; height: 8vh; line-height: 8vh; text-align: center; background-color: rgb(27, 27, 47); }
+.content-class { 
+    width: 100%; height: 100vh; 
+    display: flex; justify-content: space-evenly; align-items: safe center;
+    flex-wrap: wrap; column-gap: 10rem;
+}
+.block-class { width: 20%; height: 40vh; border: 1px solid black;  flex: 0 0 auto; }
+.block-class-img { width: 100%; height: 34vh; }
+.block-class-infor { width: 100%; height: 6vh; line-height: 6vh; text-align: center; background-color: rgb(27, 27, 47); }
 .block-class-infor a { 
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     text-decoration: none;
     color: rgba(255,255,255,.75);
 }
@@ -162,7 +166,7 @@ th, td { width: 10vw; }
 .sgt { height: 2.25rem; }
 .sgt-left { width: 70%; text-align: left; padding-left: 0.75rem; }
 .sgt-right { width: 30%; text-align: center;}
-.buttons { width: 60vw; padding: 1.25rem; margin: 1rem auto; display: flex; justify-content: flex-end; }
+.buttons { width: 60vw; padding: 0.25rem 0.75rem; margin: 1rem auto; display: flex; justify-content: flex-end; }
 .buttons a { 
     width: 8vw; background-color: rgba(0,0,0,.75); color: rgba(222,255,255,.75); 
     padding: 0.75rem 0; text-decoration: none; margin-right: 1rem; text-align: center;

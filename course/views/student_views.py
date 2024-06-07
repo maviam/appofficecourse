@@ -110,4 +110,9 @@ def create_student(request, student_id = None):
             context
         )
 
+def delete_student(request, student_id):
+    student = get_object_or_404(Student, pk=student_id)
+    
+    student.delete()
+    return redirect('course:students_list')
 
