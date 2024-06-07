@@ -4,7 +4,7 @@ from course import models
 # Register your models here.
 @admin.register(models.TrainingUnit)
 class TrainingUnitAdmin(admin.ModelAdmin):
-    list_display = ('code','subject','period','active',)
+    list_display = ('code','subject','period','all_classes',)
     ordering = ('-subject',)
     search_fields = ('code','subject',)
 
@@ -12,6 +12,11 @@ class TrainingUnitAdmin(admin.ModelAdmin):
 class ClassAdmin(admin.ModelAdmin):
     list_display = ('acronym',)
     ordering = ('acronym',)
+
+@admin.register(models.Class)
+class UnitsClassAdmin(admin.ModelAdmin):
+    list_display = ('unit','unit_class',)
+    ordering = ('unit_class',)
 
 @admin.register(models.Student)
 class StudentAdmin(admin.ModelAdmin):

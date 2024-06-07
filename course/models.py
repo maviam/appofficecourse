@@ -8,7 +8,7 @@ class TrainingUnit(models.Model):
     subject = models.CharField(max_length=50)
     hours = models.SmallIntegerField()
     period = models.SmallIntegerField()
-    active = models.BooleanField(default=True)
+    all_classes = models.BooleanField(default=False)
     
     def __str__(self):
         return f'{self.code}- { self.subject}'
@@ -25,6 +25,19 @@ class Class(models.Model):
 
     def __str__(self):
         return f'{self.acronym}'
+
+class ClassesUnit(models.Model):
+    unit = models.ForeignKey(TrainingUnit, on_delete=models.CASCADE)
+    unit_class = models.ForeignKey(Class, on_delete=models.CASCADE)
+    
+    class Meta: 
+        verbose_name = 'Classes Unit'
+        verbose_name_plural = 'Classes Units'
+        constraints = [
+            models.UniqueConstraint(
+                fields=['unit', 'unit_class'], name='unique_unit_class_combination'
+            )
+        ]
 
 class Student(models.Model):    
     name = models.CharField(max_length=100)
@@ -53,10 +66,17 @@ class Student(models.Model):
         return f'{self.name}'
     
 class Grade(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
     training_unit = models.ForeignKey(TrainingUnit, on_delete=models.SET_NULL, null=True)
     grade = models.FloatField()
     released_date = models.DateTimeField(default=timezone.now)
+    
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['student', 'training_unit'], name='unique_student_unit_combination'
+            )
+        ]
     
     def __str__(self):
         return f'{self.student} - {self.training_unit} ({self.grade})'
