@@ -38,6 +38,9 @@ class ClassesUnit(models.Model):
                 fields=['unit', 'unit_class'], name='unique_unit_class_combination'
             )
         ]
+    
+    def __str__(self):
+        return f'{self.unit_class}- {self.unit}'
 
 class Student(models.Model):    
     name = models.CharField(max_length=100)

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from course.models import Class, TrainingUnit, Student
+from course.models import Class, TrainingUnit, Student, ClassesUnit
 
 # Create your views here.
 def index(request):
@@ -18,7 +18,8 @@ def index(request):
 def main_data(request,class_id):
     my_class = Class.objects.get(pk=class_id)
     students = Student.objects.filter(my_class=class_id)
-    training_units = TrainingUnit.objects.all()
+    training_units = ClassesUnit.objects.filter(unit_class=class_id)
+    print(training_units)
     context = {
         'page_title': 'Class Students and Training Units',
         'myclass': my_class,

@@ -13,7 +13,7 @@ class ClassAdmin(admin.ModelAdmin):
     list_display = ('acronym',)
     ordering = ('acronym',)
 
-@admin.register(models.Class)
+@admin.register(models.ClassesUnit)
 class UnitsClassAdmin(admin.ModelAdmin):
     list_display = ('unit','unit_class',)
     ordering = ('unit_class',)
