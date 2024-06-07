@@ -1,0 +1,27 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <main class="data">
+        <span class="title">TRAINING UNIT INFORMATION</span>
+        <div class="student-information">
+            <p><b>Code:</b> {{ unit.code }}</p>
+            <p><b>Unit:</b> {{ unit.subject }}</p>
+            <p><b>Hours:</b> {{ unit.hours }} hours</p>
+            <p><b>Period:</b> {{ unit.period }}</p>
+            <p>
+                <b>All Classes?</b> 
+                {% if unit.all_classes %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </p>
+        </div>
+    </main>
+    <div class="buttons">
+        <a href="#">Edit unit</a>
+        <a href="#">
+            Delete unit
+        </a>
+    </div>
+{% endblock content %}

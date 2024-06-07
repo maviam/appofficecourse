@@ -19,3 +19,16 @@ def list_of_training_units(request):
         'course/training_unit/list.html',
         context
     )
+
+def unit_information(request, unit_code):
+    unit = TrainingUnit.objects.get(pk=unit_code)
+    context = {
+        'page_title': 'Training unit information',
+        'unit': unit,
+        'header': True
+    }
+    return render(
+        request,
+        'course/training_unit/unit.html',
+        context
+    )
