@@ -110,9 +110,32 @@ def create_student(request, student_id = None):
             context
         )
 
+def confirm_deletion_student(request, student_id):
+    student = get_object_or_404(Student, pk=student_id)
+    title = 'Deletion of student'
+    
+    context = {
+                'page_title': 'Confirm deletion of student',
+                'header': True,
+                'title': title,
+                'student': student
+            }
+    
+    return render(
+        request,
+        'course/student/confirm_deletion.html',
+        context
+    )
+
 def delete_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
+    print(student)
     
-    student.delete()
-    return redirect('course:students_list')
-
+    if student is not None:
+        student.delete()
+        return redirect('course:students_list')
+    
+    return render(
+                request,
+                'course/student/confirm_deletion.html',
+            )

@@ -1,0 +1,16 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <main class="data">
+        <div class="confirm-delete">
+            <span>Tem a certeza que deseja eliminar o/a formando/a {{ student.name}}? </span>
+            <div class="buttons">
+                <a href="{% url 'course:delete_student' student.id %}">Sim</a>
+                <a href="{% url 'course:see_student' student.id %}" class="delete">Não</a>
+            </div>
+        </div>
+        
+        
+    </main>
+    
+{% endblock content %}

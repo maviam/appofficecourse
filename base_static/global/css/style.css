@@ -174,3 +174,14 @@ th, td { width: 10vw; }
 }
 .buttons .delete { background-color: orangered;}
 .buttons a:hover { color: white; font-weight: 700; }
+
+/* ====================================================== DELETE STUDENT ================================================== */
+
+.confirm-delete { 
+    width: 90%; height: 55vh; font-size: 2.25rem; padding: 3.25rem 1.25rem;
+    margin: 0 auto; display: flex; justify-content: center; align-items: center;
+    flex-direction: column;
+}
+
+.confirm-delete .buttons { width: 100%; padding: 2.50rem; margin: 1rem auto; display: flex; justify-content: center; }
+.confirm-delete .buttons a { width: 15vw; }

@@ -42,7 +42,7 @@
     </main>
     <div class="buttons">
         <a href="{% url 'course:edit_student' student.id %}">Edit student</a>
-        <a href="{% url 'course:delete_student' student.id %}" class="delete" onclick="return confirm('Are you sure you want to delete this?')">
+        <a href="{% url 'course:confirm_deletion_student' student.id %}" class="delete">
             Delete student
         </a>
     </div>
