@@ -1,0 +1,26 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <main class="data">
+        <span class="title">{{ title }}</span>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.label == 'Subject' %}
+                    <div class="col-4">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% else %}
+                    <div class="col-5 caption">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="Save unit">
+        </form>
+    </main>
+{% endblock content %}

@@ -32,7 +32,7 @@
                     </td>
                     <td class="table-cel center">
                         <a href="{% url "course:edit_student" student.id %}">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="{% url 'course:confirm_deletion_student' student.id %}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}

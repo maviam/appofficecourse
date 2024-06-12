@@ -1,4 +1,4 @@
-from course.models import Student
+from course.models import Student, TrainingUnit
 from django import forms
 from project import settings
 from django.core.exceptions import ValidationError
@@ -26,3 +26,8 @@ class StudentForm(forms.ModelForm):
     #         )
     #     )
     #     return super().clean()
+    
+class TrainingUnitForm(forms.ModelForm):
+    class Meta:
+        model = TrainingUnit
+        fields = ('code','subject','hours','period','all_classes')

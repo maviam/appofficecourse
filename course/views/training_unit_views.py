@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from course.models import TrainingUnit
 from django import forms
 from django.core.paginator import Paginator
+from forms import TrainingUnitForm
 
 def list_of_training_units(request):
     units = TrainingUnit.objects.all()
@@ -30,5 +31,38 @@ def unit_information(request, unit_code):
     return render(
         request,
         'course/training_unit/unit.html',
+        context
+    )
+
+def create_unit(request):
+    title = "Add new training unit"
+    if request.method == 'POST':
+        form = TrainingUnitForm(data=request.POST)
+        context = {
+            'page_title': 'Add new unit',
+            'form': form,
+            'header': True,
+            'title': title,
+        }
+        
+        if form.is_valid():
+            form.save()
+            return redirect('course:units_list')
+
+        return render(
+            request,
+            'course/training_unit/create.html',
+            context
+        )
+    
+    context = {
+        'page_title': 'Add new unit',
+        'form': TrainingUnitForm(),
+        'header': True,
+        'title': title,
+    }
+    return render(
+        request,
+        'course/training_unit/create.html',
         context
     )

@@ -6,8 +6,8 @@ from django.utils import timezone
 class TrainingUnit(models.Model):
     code = models.CharField(max_length=5, primary_key=True)
     subject = models.CharField(max_length=50)
-    hours = models.SmallIntegerField()
-    period = models.SmallIntegerField()
+    hours = models.SmallIntegerField(choices=[(25,"25 hours"),(30,"30 hours"),(50,"50 hours"),(75,"75 hours")])
+    period = models.SmallIntegerField(choices=[(1,"First period"),(2,"Second period"),(3,"Third period")])
     all_classes = models.BooleanField(default=False)
     
     def __str__(self):
